@@ -207,3 +207,217 @@ input[type="checkbox"] {
     
 }
 
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 600px) {
+    body{
+        background-color: rgb(7,29,158);
+        background: linear-gradient(90deg, rgba(7,29,158,1) 31%, rgba(2,0,36,1) 88%);
+        font-family: 'Arial', sans-serif;
+        
+    }
+    
+    #container {
+        background: aliceblue;
+        border: 2px solid rgb(252, 252, 252);
+        width: 500px;
+        max-width: 90%;
+        margin: auto;
+        border-radius: 20px;
+        padding: 0px;
+        box-shadow: rgba(88, 46, 240, 0.4) -5px 5px, 
+                    rgba(72, 46, 240, 0.3) -10px 10px, 
+                    rgba(65, 46, 240, 0.2) -15px 15px, 
+                    rgba(78, 46, 240, 0.1) -20px 20px, 
+                    rgba(88, 46, 240, 0.05) -25px 25px;
+        
+    }
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        font-size: 3em;
+        
+    }
+    .input-container {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        gap: 5px; 
+        
+    }
+    
+    input {
+        padding: 10px;
+        width: 65%;
+        border-radius: 50px ;
+        border: 2px solid black;
+        
+    }
+    
+    #addTask{
+        padding: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+        border-radius: 50px ;
+        border: 2px solid black;
+        background-color: rgb(0, 17, 255);
+        font-weight: 900;
+        font-size: 1em;
+        color: aliceblue;
+        cursor: pointer;
+        
+    }
+    #addTask:hover{
+        background-color: rgb(7, 2, 101);
+    
+    }
+    #addTask:active{
+        background-color: rgb(0, 1, 9);
+    }
+    
+    #counterContainer{
+        width: 85%;
+    }
+    
+    #taskInput {
+        background-color: transparent;
+    }
+    
+    #count, #deleteAll {
+        font-size: 12px;
+    }
+    #deleteAll {
+        background-color: transparent;
+        border: none;
+        font-size: 11px; 
+        margin-left: auto;
+        margin-right: 45px;
+        margin-top: -10px;
+        cursor: pointer;
+        position: relative; 
+    }
+    #deleteAll:hover{
+    
+        color: rgb(56, 56, 255);
+    }
+    #count {
+        margin-left: 50px;
+        margin-right: auto;
+        margin-top: 0;
+        position: relative; 
+    }
+    #counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        align-items: center; 
+        position: relative; 
+    }
+    ul{
+        margin-top: 10px;
+    }
+    li {
+
+        display: flex;
+        flex-direction: row;
+        gap: 1.2rem;
+        padding: 10px;
+        margin-left: -15px;
+        margin-bottom: 10px; 
+        border: 0px solid;
+        border-radius: 15px;
+        width: 85%;
+        position: relative;
+        
+    }
+    
+    input[type="checkbox"] {
+        
+        appearance: none; 
+        width: 0px;
+        height: 0px;
+        border: 1px solid black;
+        border-radius: 50%; 
+        cursor: pointer;
+        position: absolute; 
+        margin-right: 10px;
+    }
+    input[type="checkbox"]:hover{
+       
+        background-color: blue;
+        color: rgb(255, 254, 254);
+    }
+    
+    input[type="checkbox"]:checked {
+        background-color: blue;
+        border: 1px solid blue;
+        
+        
+    }
+    input[type="checkbox"]:checked::after {
+        content: "✔"; 
+        color: rgb(255, 254, 254);
+        font-size: 14px;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        top: 48%;
+        transform: translate(-50%, -50%);
+    }
+    
+    input[type="checkbox"]:checked + .task-text {
+        text-decoration: line-through;
+        color: #888; 
+    }
+    
+    
+    .delete-btn:hover{
+        background-color: darkred;
+        color: red;
+    }
+       
+    
+    /* Style the checkbox */
+    input[type="checkbox"] {
+        position: absolute;
+        margin-right: 10px; 
+    }
+    
+    
+    .task-text {
+        flex-grow: 1;
+        font-size: 16px;
+        color: #000000;
+        margin-left: 40px;
+        margin-top: 0px;
+    }
+    
+    
+    .delete-btn {
+        background-color: rgb(255, 255, 255);
+        color: grey;
+        border: 1px solid grey;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 100%; 
+        width: 22px;
+        height: 22px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: -15px;
+    }
+    #taskList li {
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        margin-bottom: 10px;
+        font-size: 16px;
+        padding-right: 30px;
+        margin-bottom: -2px;
+        
+    }
+}
