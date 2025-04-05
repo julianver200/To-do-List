@@ -61,6 +61,9 @@ input {
     background-color: rgb(7, 2, 101);
 
 }
+#addTask:active{
+    background-color: rgb(0, 1, 9);
+}
 
 #counterContainer{
     width: 85%;
@@ -113,6 +116,7 @@ li {
     border: 0px solid;
     border-radius: 15px;
     width: 85%;
+    position: relative;
     
 }
 
@@ -123,7 +127,7 @@ input[type="checkbox"] {
     border: 1px solid black;
     border-radius: 50%; 
     cursor: pointer;
-    position: relative; 
+    position: absolute; 
     margin-right: 10px;
 }
 input[type="checkbox"]:hover{
