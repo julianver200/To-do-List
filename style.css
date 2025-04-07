@@ -1,212 +1,217 @@
-body{
-    background-color: rgb(7,29,158);
+/* Base Styles */
+body {
     background: linear-gradient(90deg, rgba(7,29,158,1) 31%, rgba(2,0,36,1) 88%);
     font-family: 'Arial', sans-serif;
-    
 }
 
+/* Container */
 #container {
     background: aliceblue;
-    border: 2px solid rgb(252, 252, 252);
+    border: 2px solid #fcfcfc;
     width: 500px;
     max-width: 90%;
     margin: auto;
     border-radius: 20px;
-    padding: 0px;
-    box-shadow: rgba(88, 46, 240, 0.4) -5px 5px, 
-                rgba(72, 46, 240, 0.3) -10px 10px, 
-                rgba(65, 46, 240, 0.2) -15px 15px, 
-                rgba(78, 46, 240, 0.1) -20px 20px, 
-                rgba(88, 46, 240, 0.05) -25px 25px;
-    
+    padding: 0;
+    box-shadow:
+        rgba(88, 46, 240, 0.4) -5px 5px,
+        rgba(72, 46, 240, 0.3) -10px 10px,
+        rgba(65, 46, 240, 0.2) -15px 15px,
+        rgba(78, 46, 240, 0.1) -20px 20px,
+        rgba(88, 46, 240, 0.05) -25px 25px;
 }
+
+/* Header */
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bolder;
     font-size: 3em;
-    
 }
-.input-container {
+
+/* Flex Row Utility */
+.flex-row {
     display: flex;
     flex-direction: row;
-    
-    justify-content: center; 
-    gap: 5px; 
-    
 }
 
+/* Input Container */
+.input-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Shared Input Button Styles */
+input, #addTask {
+    display: flex;
+     
+    padding: 10px;
+    border-radius: 50px;
+    border: 2px solid black;
+}
+
+/* Input Field */
 input {
-    padding: 10px;
     width: 60%;
-    border-radius: 50px ;
-    border: 2px solid black;
-    
 }
 
-#addTask{
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
-    border-radius: 50px ;
-    border: 2px solid black;
+/* Add Task Button */
+#addTask {
+    padding: 10px 25px;
     background-color: rgb(0, 17, 255);
     font-weight: 900;
     font-size: 1em;
     color: aliceblue;
     cursor: pointer;
-    
 }
-#addTask:hover{
+#addTask:hover {
     background-color: rgb(7, 2, 101);
-
 }
-#addTask:active{
+#addTask:active {
     background-color: rgb(0, 1, 9);
 }
 
-#counterContainer{
-    width: 85%;
+/* Counter Styles */
+#counterContainer {
+    width: 90%;
 }
-
-#taskInput {
-    background-color: transparent;
-    justify-content: center;
+#counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
-
 #count, #deleteAll {
     font-size: 12px;
+    position: relative;
+}
+#count {
+    margin-left: 50px;
 }
 #deleteAll {
     background-color: transparent;
     border: none;
-    font-size: 11px; 
+    font-size: 11px;
     margin-left: auto;
     margin-right: 45px;
     margin-top: -10px;
     cursor: pointer;
-    position: relative; 
 }
-#deleteAll:hover{
-
+#deleteAll:hover {
     color: rgb(56, 56, 255);
 }
-#count {
-    margin-left: 50px;
-    margin-right: auto;
-    margin-top: 0;
-    position: relative; 
-}
-#counter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; 
-    align-items: center; 
-    position: relative; 
-}
-ul{
+
+/* Task List */
+ul {
     margin-top: 10px;
-    
-    position:relative;
-    
-}
-
-
-
-input[type="checkbox"] {
-    appearance: none; 
-    width: 0px;
-    height: 0px;
-    border: 1px solid black;
-    border-radius: 50%; 
-    cursor: pointer;
-    position: relative; 
-    
+    position: relative;
+    list-style-type: none;
     display: flex;
-    flex-direction: row;
-    vertical-align: middle;
-    margin-left: 5px;
+    flex-direction: column;
 }
-input[type="checkbox"]:hover{
-   
-    background-color: blue;
-    color: rgb(255, 254, 254);
+.taskContainer{
+    display: flex;
+    
 }
 
+/* Checkbox Styling */
+input[type="checkbox"] {
+    appearance: none;
+    width: 0;
+    height: 0;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    position: relative;
+    
+    
+    
+}
+input[type="checkbox"]:hover {
+    background-color: blue;
+    color: #fff;
+}
 input[type="checkbox"]:checked {
     background-color: blue;
-    border: 1px solid blue;
-    
-    
+    border-color: blue;
 }
 input[type="checkbox"]:checked::after {
-    content: "✔"; 
-    color: rgb(255, 254, 254);
+    content: "✔";
+    color: #fff;
     font-size: 14px;
     font-weight: bold;
-    position: absolute;
+    
     left: 50%;
     top: 48%;
     transform: translate(-50%, -50%);
 }
-
 input[type="checkbox"]:checked + .task-text {
     text-decoration: line-through;
-    color: #888; 
+    color: #888;
 }
 
 
-.delete-btn:hover{
-    background-color: darkred;
-    color: red;
-}
-   
-
-/* Style the checkbox */
-input[type="checkbox"] {
-    position: absolute;
-    margin-right: 10px; 
-}
-
-
-.task-text {
-    flex-grow: 1;
-    font-size: 16px;
-    color: #000000;
-    margin-left: 40px;
-    margin-top: 0px;
-}
-
-
+/* Delete Button */
 .delete-btn {
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     color: grey;
     border: 1px solid grey;
     font-size: 14px;
     font-weight: bold;
     padding: 5px;
     cursor: pointer;
-    border-radius: 100%; 
+    border-radius: 100%;
     width: 22px;
-    height: 22px; 
+    height: 22px;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    
 }
-#taskList li {
+.delete-btn:hover {
+    background-color: darkred;
+    color: red;
+}
+
+.taskContainer ul {
+    display: flex;
+    align-items: flex-start;
+    
+    
+    padding: 5px 5px;
+    
+    border-radius: 10px;
+    width: 100%;
+    
+    box-sizing: border-box;
+}
+ul li {
     display: flex;
     align-items: center;
-    padding: 10px 30px 10px 0px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    border-radius: 15px;
-    background-color: #f5f5f5;
-    width: 85%;
-    max-width: 85%;
-    position: relative;
-   justify-content: start;
-
-
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 5px;
+    margin: -5px 15px;
+    
+    
+    width: 90%;
+    box-sizing: border-box;
 }
+
+.task-text{
+     
+        margin-right: auto;
+}
+#taskInput{
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+}
+
 
